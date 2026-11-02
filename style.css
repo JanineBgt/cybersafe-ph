@@ -1375,73 +1375,6 @@ button {
 }
 
 /* ==========================================
-   REFERENCES / RESOURCES
-   Displays links to online safety resources.
-========================================== */
-
-.resource-list {
-  border-top: 1px solid var(--line);
-}
-
-/* Individual resource link rows. */
-
-.resource-list a {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 17px 8px;
-  border-bottom: 1px solid var(--line);
-  transition: .2s;
-}
-
-.resource-list a:hover {
-  background: rgba(53,217,245,.04);
-  padding-left: 14px;
-}
-
-/* Resource icon and information. */
-
-.resource-icon {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(53,217,245,.35);
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  color: var(--cyan);
-  flex: none;
-}
-
-.resource-list b {
-  display: block;
-  font-size: 12px;
-}
-
-.resource-list small {
-  display: block;
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-
-.resource-list em {
-  margin-left: auto;
-  font: 700 8px var(--display);
-  letter-spacing: 1px;
-  color: var(--cyan);
-  font-style: normal;
-  white-space: nowrap;
-}
-
-/* Small note below the resource list. */
-
-.source-note {
-  font-size: 9px;
-  color: #7893ae;
-  margin-top: 15px;
-}
-
-/* ==========================================
    FOOTER
    Bottom section of the website.
 ========================================== */
@@ -1738,18 +1671,6 @@ button {
   }
 
   /* Adjusts reference links and footer. */
-
-  .resource-list a {
-    gap: 10px;
-  }
-
-  .resource-list em {
-    font-size: 7px;
-  }
-
-  .resource-list small {
-    max-width: 220px;
-  }
 
   .footer-bottom {
     display: grid;
@@ -2124,32 +2045,6 @@ body.light-mode .ethics-grid h3 {
 
 body.light-mode .ethics-grid p {
   color: #61758b;
-}
-
-/* Light mode resource links. */
-
-body.light-mode .resource-list {
-  border-color: #d6e3ef;
-}
-
-body.light-mode .resource-list a {
-  border-color: #d6e3ef;
-}
-
-body.light-mode .resource-list a:hover {
-  background: rgba(53,160,200,.06);
-}
-
-body.light-mode .resource-list b {
-  color: #173451;
-}
-
-body.light-mode .resource-list small {
-  color: #61758b;
-}
-
-body.light-mode .source-note {
-  color: #71849a;
 }
 
 /* Light mode footer. */
