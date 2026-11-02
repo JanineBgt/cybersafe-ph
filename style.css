@@ -2527,8 +2527,8 @@ body.light-mode .breakdown-track {
     visibility: visible;
 
     animation:
-        welcomeGirlEnter 1.2s ease-out 0.3s forwards,
-        welcomeGirlExit 1s ease-in 8s forwards;
+        welcomeGirlEnter 1s ease-out 0.3s both,
+        welcomeGirlExit 1s ease-in 3s forwards;
 }
 
 /* WELCOME VIDEO */
@@ -2565,7 +2565,7 @@ body.light-mode .breakdown-track {
 
     box-shadow: 0 8px 30px rgba(0, 100, 255, 0.25);
 
-    animation: welcomeBubble 1s ease-out 1s both;
+    animation: welcomeBubble 1s ease-out 0.3s both;
 }
 
 /* BUBBLE TAIL */
