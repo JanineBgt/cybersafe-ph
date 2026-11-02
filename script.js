@@ -46,25 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateActiveNavigation);
 
   updateActiveNavigation();
-// ==========================================
-// NAVIGATION ACTIVE STATE
-// ==========================================
+  // ==========================================
+  // NAVIGATION ACTIVE STATE
+  // ==========================================
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-link");
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      // Remove active state from all navigation links
-      navLinks.forEach((nav) => {
-        nav.classList.remove("active");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        // Remove active state from all navigation links
+        navLinks.forEach((nav) => {
+          nav.classList.remove("active");
+        });
+
+        // Add active state to the clicked navigation link
+        this.classList.add("active");
       });
-
-      // Add active state to the clicked navigation link
-      this.classList.add("active");
     });
   });
-});
 
 
   // ==========================================
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }
+
 
 
   // ==========================================
@@ -158,16 +159,24 @@ document.addEventListener("DOMContentLoaded", () => {
       content.append(label, title, paragraph);
       threatDetail.append(mark, content);
 
+      // Highlight the selected threat card
       threatCards.forEach(item => {
         item.setAttribute("aria-pressed", "false");
       });
 
       card.setAttribute("aria-pressed", "true");
 
+      // Automatically scroll to the Threat Field Guide
+      requestAnimationFrame(() => {
+        threatDetail.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
+
     });
 
   });
-
 
   // ==========================================
   // 3. PASSWORD SAFETY CHECKLIST
