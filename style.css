@@ -1,3 +1,9 @@
+/* ==========================================
+   CYBERSAFE PH
+   MAIN CSS VARIABLES
+   Defines the website's colors and fonts.
+========================================== */
+
 :root {
   --bg: #071326;
   --panel: #0d2340;
@@ -13,16 +19,23 @@
   --display: 'Space Grotesk', Arial, sans-serif;
 }
 
+/* GLOBAL RESET
+   Removes default browser spacing and uses border-box sizing. */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Smooth scrolling and space for the sticky navigation. */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
+
+/* Main website body styles. */
 
 body {
   background: var(--bg);
@@ -32,10 +45,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Default link appearance. */
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Uses the website's font for buttons and inputs. */
 
 button, input {
   font: inherit;
@@ -45,12 +62,19 @@ button {
   color: inherit;
 }
 
+/* Reusable centered container for website content. */
+
 .wrap {
   width: min(1160px, calc(100% - 48px));
   margin-inline: auto;
 }
 
-/* HEADER */
+/* ==========================================
+   HEADER AND NAVIGATION
+   Contains the logo, navigation links, and menu.
+========================================== */
+
+/* Skip link for keyboard accessibility. */
 
 .skip-link {
   position: absolute;
@@ -66,6 +90,8 @@ button {
   left: 10px;
 }
 
+/* Sticky header that stays visible while scrolling. */
+
 .site-header {
   height: 82px;
   position: sticky;
@@ -76,6 +102,8 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
+/* Main navigation layout. */
+
 .nav {
   height: 100%;
   display: flex;
@@ -83,6 +111,8 @@ button {
   justify-content: space-between;
   gap: 22px;
 }
+
+/* Website logo and brand name. */
 
 .brand {
   display: flex;
@@ -110,6 +140,8 @@ button {
   margin-top: -3px;
 }
 
+/* Navigation links arrangement and hover effects. */
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -128,6 +160,8 @@ button {
   color: var(--cyan);
 }
 
+/* Navigation call-to-action button. */
+
 .nav-cta {
   font-size: 11px;
   font-weight: 700;
@@ -141,6 +175,8 @@ button {
 .nav-cta span {
   margin-left: 7px;
 }
+
+/* Mobile navigation menu button. */
 
 .menu-toggle {
   display: none;
@@ -160,7 +196,10 @@ button {
   width: 20px;
 }
 
-/* HOMEPAGE */
+/* ==========================================
+   HOMEPAGE / HERO SECTION
+   Main introduction and website call-to-action.
+========================================== */
 
 .hero {
   min-height: 610px;
@@ -171,6 +210,8 @@ button {
   padding-block: 70px 75px;
   position: relative;
 }
+
+/* Decorative background glow behind the hero content. */
 
 .hero:before {
   content: "";
@@ -184,6 +225,8 @@ button {
   top: 10%;
   pointer-events: none;
 }
+
+/* Small section label and indicator. */
 
 .eyebrow {
   font: 700 10px var(--display);
@@ -202,11 +245,15 @@ button {
   box-shadow: 0 0 12px var(--green);
 }
 
+/* Main homepage heading. */
+
 .hero h1 {
   font: 700 clamp(56px,7vw,88px)/.98 var(--display);
   letter-spacing: -5px;
   margin: 24px 0;
 }
+
+/* Highlighted text in important headings. */
 
 .hero h1 span,
 .section-heading h2 span,
@@ -215,12 +262,16 @@ button {
   color: var(--cyan);
 }
 
+/* Homepage introduction paragraph. */
+
 .hero-lead {
   font-size: 16px;
   color: #b6c9dc;
   max-width: 510px;
   line-height: 1.8;
 }
+
+/* Homepage action buttons. */
 
 .hero-actions {
   display: flex;
@@ -229,6 +280,8 @@ button {
   margin-top: 30px;
   flex-wrap: wrap;
 }
+
+/* Reusable button styles. */
 
 .button {
   display: inline-flex;
@@ -243,6 +296,8 @@ button {
   transition: .2s;
 }
 
+/* Primary gradient button. */
+
 .button-primary {
   color: #041326;
   background: linear-gradient(110deg,#5beaff,#3999ff);
@@ -254,6 +309,8 @@ button {
   box-shadow: 0 10px 34px rgba(45,157,255,.35);
 }
 
+/* Secondary text link beside the main button. */
+
 .text-link {
   font-size: 12px;
   color: #b5c8da;
@@ -264,6 +321,8 @@ button {
   color: var(--cyan);
   margin-left: 6px;
 }
+
+/* Small trust and privacy information below the buttons. */
 
 .hero-proof {
   display: flex;
@@ -291,7 +350,10 @@ button {
   color: var(--muted);
 }
 
-/* HERO GRAPHIC */
+/* ==========================================
+   HERO GRAPHIC
+   Decorative cybersecurity shield and floating icons.
+========================================== */
 
 .hero-art {
   height: 440px;
@@ -308,6 +370,8 @@ button {
   background: radial-gradient(ellipse,rgba(32,137,255,.22),transparent 68%);
   z-index: -1;
 }
+
+/* Decorative orbit circles around the shield. */
 
 .orbit {
   position: absolute;
@@ -328,6 +392,8 @@ button {
   transform: rotate(48deg);
   border-color: rgba(69,133,255,.32);
 }
+
+/* Main shield illustration. */
 
 .shield-stage {
   position: relative;
@@ -356,6 +422,8 @@ button {
   place-items: center;
 }
 
+/* Inner shield decoration. */
+
 .shield-inner {
   width: 120px;
   height: 120px;
@@ -366,6 +434,8 @@ button {
   place-items: center;
   box-shadow: inset 0 0 30px rgba(53,217,245,.16),0 0 25px rgba(53,217,245,.25);
 }
+
+/* Lock illustration inside the shield. */
 
 .lock-shackle {
   position: absolute;
@@ -407,6 +477,8 @@ button {
   border-radius: 3px;
 }
 
+/* Small decorative spark beside the shield. */
+
 .shield-spark {
   position: absolute;
   right: 3px;
@@ -415,6 +487,8 @@ button {
   font-size: 25px;
   text-shadow: 0 0 20px var(--cyan);
 }
+
+/* Floating cybersecurity information chips. */
 
 .float-chip {
   position: absolute;
@@ -444,6 +518,8 @@ button {
   transform: rotate(-8deg);
 }
 
+/* Caption below the hero illustration. */
+
 .art-caption {
   position: absolute;
   bottom: 4px;
@@ -461,7 +537,10 @@ button {
   margin-right: 8px;
 }
 
-/* REMINDER BAR */
+/* ==========================================
+   REMINDER BAR / TICKER
+   Displays scrolling online safety reminders.
+========================================== */
 
 .ticker {
   overflow: hidden;
@@ -484,7 +563,10 @@ button {
   color: var(--cyan);
 }
 
-/* GENERAL SECTIONS */
+/* ==========================================
+   GENERAL SECTIONS
+   Shared spacing and heading styles.
+========================================== */
 
 .section {
   padding-block: 100px;
@@ -511,13 +593,18 @@ button {
   line-height: 1.8;
 }
 
-/* ABOUT */
+/* ==========================================
+   ABOUT / MISSION SECTION
+   Shows the website's purpose and key information.
+========================================== */
 
 .mission-grid {
   display: grid;
   grid-template-columns: 1.4fr repeat(3,1fr);
   gap: 13px;
 }
+
+/* Shared appearance of mission and statistics cards. */
 
 .mission-card,
 .stat-card {
@@ -534,6 +621,8 @@ button {
   background: linear-gradient(135deg,#103d68,#0c2341);
 }
 
+/* Small label at the top of each card. */
+
 .card-topline {
   display: flex;
   justify-content: space-between;
@@ -546,6 +635,8 @@ button {
   color: var(--cyan);
   font-size: 18px;
 }
+
+/* Mission card heading and description. */
 
 .mission-card h3 {
   font: 700 27px/1.2 var(--display);
@@ -564,6 +655,8 @@ button {
   z-index: 1;
 }
 
+/* Link inside the mission card. */
+
 .card-link {
   display: inline-block;
   margin-top: 20px;
@@ -578,6 +671,8 @@ button {
   margin-left: 8px;
 }
 
+/* Large decorative letter in the mission card. */
+
 .mission-watermark {
   position: absolute;
   right: 10px;
@@ -585,6 +680,8 @@ button {
   font: 700 100px var(--display);
   color: rgba(94,206,255,.07);
 }
+
+/* Statistics cards. */
 
 .stat-card {
   padding: 22px;
@@ -608,18 +705,27 @@ button {
   margin: 3px 0 8px;
 }
 
-/* THREAT CENTER */
+/* ==========================================
+   THREAT CENTER
+   Displays different online threats and their details.
+========================================== */
+
+/* Dark background variation for selected sections. */
 
 .section-dark {
   background: #091a30;
   border-block: 1px solid rgba(88,160,226,.12);
 }
 
+/* Grid layout for threat cards. */
+
 .threat-grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 13px;
 }
+
+/* Individual clickable threat cards. */
 
 .threat-card {
   position: relative;
@@ -633,6 +739,8 @@ button {
   transition: .2s;
 }
 
+/* Hover, keyboard focus, and selected threat card states. */
+
 .threat-card:hover,
 .threat-card:focus-visible,
 .threat-card[aria-pressed="true"] {
@@ -641,6 +749,8 @@ button {
   outline: none;
   box-shadow: 0 10px 35px rgba(0,111,220,.1);
 }
+
+/* Icon containers for each threat category. */
 
 .icon-tile {
   width: 55px;
@@ -651,6 +761,8 @@ button {
   margin-bottom: 20px;
 }
 
+/* SVG icon appearance. */
+
 .icon-tile svg {
   width: 31px;
   height: 31px;
@@ -660,6 +772,8 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Different icon color themes. */
 
 .icon-cyan {
   background: rgba(53,217,245,.12);
@@ -681,6 +795,8 @@ button {
   color: #68e7ba;
 }
 
+/* Threat card number and title. */
+
 .threat-number {
   display: block;
   font: 700 8px var(--display);
@@ -694,6 +810,8 @@ button {
   font: 700 18px var(--display);
   margin-bottom: 7px;
 }
+
+/* Short explanation and arrow inside threat cards. */
 
 .threat-desc {
   display: block;
@@ -709,6 +827,8 @@ button {
   bottom: 16px;
   color: var(--cyan);
 }
+
+/* Detail panel shown when a threat card is selected. */
 
 .threat-detail {
   display: flex;
@@ -750,7 +870,12 @@ button {
   color: var(--muted);
 }
 
-/* PASSWORD LAB */
+/* ==========================================
+   PASSWORD LAB
+   Interactive password security checklist.
+========================================== */
+
+/* Two-column layout for the password lab. */
 
 .lab-layout {
   display: grid;
@@ -758,6 +883,8 @@ button {
   gap: 65px;
   align-items: center;
 }
+
+/* Small label above the password lab heading. */
 
 .lab-badge {
   display: inline-block;
@@ -768,6 +895,8 @@ button {
   font: 700 8px var(--display);
   letter-spacing: 1.5px;
 }
+
+/* Password lab introduction. */
 
 .lab-copy h3 {
   font: 700 37px/1.15 var(--display);
@@ -780,6 +909,8 @@ button {
   color: var(--muted);
   max-width: 340px;
 }
+
+/* Additional privacy reminder. */
 
 .lab-note {
   display: flex;
@@ -797,12 +928,16 @@ button {
   font-size: 18px;
 }
 
+/* Password checklist panel. */
+
 .check-panel {
   border: 1px solid var(--line);
   background: linear-gradient(145deg,#102a49,#0b1c34);
   border-radius: 13px;
   padding: 26px;
 }
+
+/* Panel heading and progress information. */
 
 .panel-head,
 .progress-meta {
@@ -836,6 +971,8 @@ button {
   margin: 18px 0 9px;
 }
 
+/* Individual password requirement rows. */
+
 .check-row {
   display: flex;
   align-items: center;
@@ -845,10 +982,14 @@ button {
   cursor: pointer;
 }
 
+/* Hides the original checkbox while keeping it functional. */
+
 .check-row input {
   position: absolute;
   opacity: 0;
 }
+
+/* Custom checkbox design. */
 
 .custom-check {
   width: 19px;
@@ -858,6 +999,8 @@ button {
   flex: none;
   position: relative;
 }
+
+/* Appearance when a requirement is checked. */
 
 .check-row input:checked + .custom-check {
   background: var(--cyan);
@@ -875,10 +1018,14 @@ button {
   font-size: 13px;
 }
 
+/* Keyboard focus indicator for checkboxes. */
+
 .check-row input:focus-visible + .custom-check {
   outline: 2px solid white;
   outline-offset: 3px;
 }
+
+/* Requirement names and descriptions. */
 
 .check-row b {
   display: block;
@@ -898,6 +1045,8 @@ button {
   color: #6884a1;
   font-style: normal;
 }
+
+/* Password checklist progress bar. */
 
 .progress-wrap {
   margin-top: 20px;
@@ -928,18 +1077,27 @@ button {
   transition: width .25s;
 }
 
+/* Privacy information below the checklist. */
+
 .privacy-note {
   font-size: 9px;
   color: #7995b1;
   margin-top: 14px;
 }
 
-/* CYBER WELLNESS */
+/* ==========================================
+   CYBER WELLNESS
+   Provides online safety and digital wellness tips.
+========================================== */
+
+/* Background and border for the wellness section. */
 
 .wellness-section {
   background: linear-gradient(105deg,#0b203a,#0a1830);
   border-block: 1px solid var(--line);
 }
+
+/* Two-column wellness layout. */
 
 .wellness-grid {
   display: grid;
@@ -947,6 +1105,8 @@ button {
   align-items: center;
   gap: 80px;
 }
+
+/* Decorative wellness illustration. */
 
 .wellness-art {
   height: 300px;
@@ -978,6 +1138,8 @@ button {
   transform: rotate(-10deg);
 }
 
+/* Decorative spark icons around the illustration. */
+
 .wellness-spark {
   position: absolute;
   color: var(--cyan);
@@ -995,6 +1157,8 @@ button {
   color: var(--purple);
 }
 
+/* Wellness and quiz heading styles. */
+
 .wellness-copy h2,
 .quiz-intro h2 {
   font: 700 45px/1.1 var(--display);
@@ -1008,6 +1172,8 @@ button {
   color: var(--muted);
   max-width: 460px;
 }
+
+/* List of cyber wellness tips. */
 
 .wellness-list {
   list-style: none;
@@ -1026,7 +1192,12 @@ button {
   margin-right: 10px;
 }
 
-/* QUIZ */
+/* ==========================================
+   CYBER CHALLENGE / QUIZ
+   Styles the interactive cybersecurity quiz.
+========================================== */
+
+/* Quiz introduction and quiz card layout. */
 
 .quiz-section {
   display: grid;
@@ -1034,6 +1205,8 @@ button {
   gap: 65px;
   align-items: center;
 }
+
+/* Decorative quiz label. */
 
 .quiz-stamp {
   display: inline-block;
@@ -1053,6 +1226,8 @@ button {
   vertical-align: middle;
 }
 
+/* Main quiz container. */
+
 .quiz-card {
   min-height: 340px;
   border: 1px solid rgba(53,217,245,.25);
@@ -1061,6 +1236,8 @@ button {
   padding: 25px;
   box-shadow: 0 20px 50px rgba(0,0,0,.12);
 }
+
+/* Quiz header and question counter. */
 
 .quiz-top {
   display: flex;
@@ -1074,6 +1251,8 @@ button {
   color: var(--cyan);
 }
 
+/* Progress indicator above the quiz questions. */
+
 .quiz-progress {
   margin: 15px 0 25px;
 }
@@ -1084,6 +1263,8 @@ button {
   background: var(--cyan);
   transition: width .3s;
 }
+
+/* Question symbol and question text. */
 
 .quiz-symbol {
   width: 43px;
@@ -1107,6 +1288,8 @@ button {
   color: var(--muted);
   margin-bottom: 20px;
 }
+
+/* Multiple-choice answer layout. */
 
 .quiz-options {
   display: grid;
@@ -1132,6 +1315,8 @@ button {
   opacity: .85;
 }
 
+/* Correct and incorrect answer states. */
+
 .quiz-option.correct {
   border-color: var(--green);
   background: rgba(94,226,176,.1);
@@ -1141,6 +1326,8 @@ button {
   border-color: #ff8494;
   background: rgba(255,132,148,.1);
 }
+
+/* Feedback message and next question button. */
 
 .quiz-feedback {
   font-size: 11px;
@@ -1153,7 +1340,10 @@ button {
   margin-top: 14px;
 }
 
-/* ETHICS */
+/* ==========================================
+   DIGITAL ETHICS
+   Displays responsible online behavior information.
+========================================== */
 
 .ethics-grid {
   display: grid;
@@ -1184,11 +1374,16 @@ button {
   color: var(--muted);
 }
 
-/* REFERENCES */
+/* ==========================================
+   REFERENCES / RESOURCES
+   Displays links to online safety resources.
+========================================== */
 
 .resource-list {
   border-top: 1px solid var(--line);
 }
+
+/* Individual resource link rows. */
 
 .resource-list a {
   display: flex;
@@ -1203,6 +1398,8 @@ button {
   background: rgba(53,217,245,.04);
   padding-left: 14px;
 }
+
+/* Resource icon and information. */
 
 .resource-icon {
   width: 32px;
@@ -1236,13 +1433,18 @@ button {
   white-space: nowrap;
 }
 
+/* Small note below the resource list. */
+
 .source-note {
   font-size: 9px;
   color: #7893ae;
   margin-top: 15px;
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+   Bottom section of the website.
+========================================== */
 
 .footer {
   background: #050f1e;
@@ -1267,6 +1469,8 @@ button {
   color: var(--cyan);
 }
 
+/* Footer copyright and additional information. */
+
 .footer-bottom {
   border-top: 1px solid rgba(130,170,210,.1);
   padding-block: 15px;
@@ -1276,7 +1480,10 @@ button {
   font-size: 9px;
 }
 
-/* TABLET */
+/* ==========================================
+   TABLET RESPONSIVE DESIGN
+   Adjusts navigation and card layouts on tablets.
+========================================== */
 
 @media (max-width: 1000px) {
   .nav-links {
@@ -1304,12 +1511,17 @@ button {
   }
 }
 
-/* MOBILE */
+/* ==========================================
+   MOBILE RESPONSIVE DESIGN
+   Changes the layout for smaller screens.
+========================================== */
 
 @media (max-width: 720px) {
   .wrap {
     width: min(100% - 34px,560px);
   }
+
+  /* Smaller mobile header and menu button. */
 
   .site-header {
     height: 70px;
@@ -1319,6 +1531,8 @@ button {
     display: block;
     margin-left: auto;
   }
+
+  /* Mobile navigation dropdown menu. */
 
   .nav-links {
     display: none;
@@ -1343,6 +1557,8 @@ button {
     padding: 11px 5px;
     font-size: 13px;
   }
+
+  /* Homepage layout on mobile. */
 
   .hero {
     grid-template-columns: 1fr;
@@ -1382,6 +1598,8 @@ button {
     bottom: 45px;
   }
 
+  /* Reduces section spacing on mobile. */
+
   .section {
     padding-block: 70px;
   }
@@ -1394,6 +1612,8 @@ button {
     margin-top: 16px;
   }
 
+  /* Mission cards become two columns. */
+
   .mission-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1405,6 +1625,8 @@ button {
   .stat-card {
     min-height: 190px;
   }
+
+  /* Changes major content layouts into one column. */
 
   .lab-layout,
   .wellness-grid,
@@ -1430,6 +1652,8 @@ button {
     display: none;
   }
 
+  /* Footer layout adjustments. */
+
   .footer-main {
     flex-wrap: wrap;
     gap: 18px;
@@ -1441,7 +1665,10 @@ button {
   }
 }
 
-/* SMALL MOBILE */
+/* ==========================================
+   SMALL MOBILE RESPONSIVE DESIGN
+   Further adjustments for narrow phone screens.
+========================================== */
 
 @media (max-width: 460px) {
   .brand {
@@ -1473,6 +1700,8 @@ button {
     transform: scale(.72);
   }
 
+  /* Changes card grids into a single column. */
+
   .mission-grid,
   .threat-grid,
   .ethics-grid {
@@ -1491,6 +1720,8 @@ button {
     min-height: 205px;
   }
 
+  /* Adjusts headings and content spacing. */
+
   .section-heading h2 {
     font-size: 34px;
   }
@@ -1505,6 +1736,8 @@ button {
   .quiz-card {
     padding: 19px;
   }
+
+  /* Adjusts reference links and footer. */
 
   .resource-list a {
     gap: 10px;
@@ -1523,6 +1756,8 @@ button {
     gap: 5px;
   }
 
+  /* Scrolling ticker animation on small screens. */
+
   .ticker-track {
     justify-content: flex-start;
     animation: marquee 22s linear infinite;
@@ -1540,7 +1775,10 @@ button {
   }
 }
 
-/* ACCESSIBILITY */
+/* ==========================================
+   ACCESSIBILITY
+   Respects users who prefer reduced motion.
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1552,7 +1790,715 @@ button {
     transition-duration: .01ms !important;
   }
 }
-/* ACTIVE NAVIGATION */
+
+/* ==========================================
+   ACTIVE NAVIGATION
+   Highlights the currently active navigation link.
+========================================== */
+
 .nav-links a.active {
   color: var(--cyan);
+}
+
+/* ==========================================
+   DARK / LIGHT MODE TOGGLE
+   Styles the button used to switch website themes.
+========================================== */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(53,217,245,.35);
+  border-radius: 20px;
+  background: rgba(53,217,245,.08);
+  color: var(--cyan);
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(53,217,245,.17);
+  border-color: var(--cyan);
+}
+
+.theme-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.theme-text {
+  font-size: 9px;
+}
+
+/* ==========================================
+   LIGHT MODE COLORS
+   Changes the website appearance when light mode is enabled.
+========================================== */
+
+body.light-mode {
+  --bg: #f3f7fc;
+  --panel: #ffffff;
+  --line: rgba(28,79,125,.16);
+  --text: #142b45;
+  --muted: #61758b;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Light mode header and navigation. */
+
+body.light-mode .site-header {
+  background: rgba(255,255,255,.94);
+  border-color: rgba(28,79,125,.15);
+}
+
+body.light-mode .brand small {
+  color: #71849a;
+}
+
+body.light-mode .nav-links a {
+  color: #425b75;
+}
+
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+  color: #087fa8;
+}
+
+/* Light mode theme switch and mobile menu button. */
+
+body.light-mode .theme-toggle {
+  background: #e8f6fc;
+  border-color: #b4dce9;
+  color: #087fa8;
+}
+
+body.light-mode .menu-toggle {
+  border-color: #b4dce9;
+}
+
+body.light-mode .menu-toggle span {
+  background: #087fa8;
+}
+
+/* Light mode homepage text. */
+
+body.light-mode .hero-lead {
+  color: #536b83;
+}
+
+body.light-mode .hero-proof p {
+  color: #29445f;
+}
+
+body.light-mode .hero-proof p span {
+  color: #71849a;
+}
+
+body.light-mode .text-link {
+  color: #425b75;
+}
+
+/* Light mode reminder ticker. */
+
+body.light-mode .ticker {
+  background: #e7f1fa;
+  border-color: #d5e3ef;
+}
+
+body.light-mode .ticker-track {
+  color: #536b83;
+}
+
+/* Light mode general section descriptions. */
+
+body.light-mode .section-heading > p {
+  color: #61758b;
+}
+
+/* Light mode mission and statistics cards. */
+
+body.light-mode .mission-card,
+body.light-mode .stat-card {
+  background: linear-gradient(145deg,#ffffff,#edf5fc);
+  border-color: #d6e3ef;
+}
+
+body.light-mode .mission-main {
+  background: linear-gradient(135deg,#e0f4ff,#dcecff);
+}
+
+body.light-mode .card-topline {
+  color: #607d98;
+}
+
+body.light-mode .mission-card h3,
+body.light-mode .stat-card h3 {
+  color: #173451;
+}
+
+body.light-mode .mission-card p,
+body.light-mode .stat-card p {
+  color: #61758b;
+}
+
+body.light-mode .stat-card > strong {
+  color: #7990a7;
+}
+
+/* Light mode dark-background sections. */
+
+body.light-mode .section-dark {
+  background: #eaf2fa;
+  border-color: #d7e4ef;
+}
+
+body.light-mode .section-dark .section-heading h2 {
+  color: #173451;
+}
+
+/* Light mode threat cards and detail panel. */
+
+body.light-mode .threat-card {
+  background: linear-gradient(150deg,#ffffff,#edf5fc);
+  border-color: #d6e3ef;
+  color: #173451;
+}
+
+body.light-mode .threat-card:hover,
+body.light-mode .threat-card:focus-visible,
+body.light-mode .threat-card[aria-pressed="true"] {
+  border-color: #159dc2;
+  box-shadow: 0 10px 30px rgba(25,100,150,.12);
+}
+
+body.light-mode .threat-number {
+  color: #71869c;
+}
+
+body.light-mode .threat-desc {
+  color: #61758b;
+}
+
+body.light-mode .threat-detail {
+  background: #ffffff;
+  border-color: #c8e1ed;
+}
+
+body.light-mode .threat-detail h3 {
+  color: #173451;
+}
+
+body.light-mode .threat-detail p {
+  color: #61758b;
+}
+
+/* Light mode password lab. */
+
+body.light-mode .lab-copy > p {
+  color: #61758b;
+}
+
+body.light-mode .lab-note {
+  color: #425b75;
+}
+
+body.light-mode .check-panel {
+  background: linear-gradient(145deg,#ffffff,#edf5fc);
+  border-color: #d6e3ef;
+}
+
+body.light-mode .panel-head {
+  color: #29445f;
+}
+
+body.light-mode .panel-intro {
+  color: #61758b;
+}
+
+body.light-mode .check-row {
+  border-color: #dce7f0;
+}
+
+body.light-mode .check-row b {
+  color: #173451;
+}
+
+body.light-mode .check-row small {
+  color: #71849a;
+}
+
+body.light-mode .check-row em {
+  color: #8095aa;
+}
+
+body.light-mode .progress-meta {
+  color: #536b83;
+}
+
+body.light-mode .progress-track {
+  background: #dce8f2;
+}
+
+body.light-mode .privacy-note {
+  color: #71849a;
+}
+
+/* Light mode cyber wellness section. */
+
+body.light-mode .wellness-section {
+  background: linear-gradient(105deg,#e8f4fc,#f5f9fd);
+  border-color: #d6e3ef;
+}
+
+body.light-mode .wellness-copy > p {
+  color: #61758b;
+}
+
+body.light-mode .wellness-list li {
+  color: #425b75;
+}
+
+/* Light mode quiz card and answer options. */
+
+body.light-mode .quiz-intro > p {
+  color: #61758b;
+}
+
+body.light-mode .quiz-card {
+  background: linear-gradient(145deg,#ffffff,#edf5fc);
+  border-color: #cbdfea;
+}
+
+body.light-mode .quiz-top {
+  color: #61758b;
+}
+
+body.light-mode .quiz-progress {
+  background: #dce8f2;
+}
+
+body.light-mode .quiz-card h3 {
+  color: #173451;
+}
+
+body.light-mode .quiz-card p {
+  color: #61758b;
+}
+
+body.light-mode .quiz-option {
+  background: #f5f9fd;
+  border-color: #d6e3ef;
+  color: #29445f;
+}
+
+body.light-mode .quiz-option:hover:not(:disabled) {
+  border-color: #159dc2;
+}
+
+body.light-mode .quiz-option.correct {
+  background: #e6f8f0;
+}
+
+body.light-mode .quiz-option.wrong {
+  background: #fff0f1;
+}
+
+/* Light mode digital ethics cards. */
+
+body.light-mode .ethics-grid article {
+  background: #ffffff;
+  border-color: #d6e3ef;
+}
+
+body.light-mode .ethics-grid h3 {
+  color: #173451;
+}
+
+body.light-mode .ethics-grid p {
+  color: #61758b;
+}
+
+/* Light mode resource links. */
+
+body.light-mode .resource-list {
+  border-color: #d6e3ef;
+}
+
+body.light-mode .resource-list a {
+  border-color: #d6e3ef;
+}
+
+body.light-mode .resource-list a:hover {
+  background: rgba(53,160,200,.06);
+}
+
+body.light-mode .resource-list b {
+  color: #173451;
+}
+
+body.light-mode .resource-list small {
+  color: #61758b;
+}
+
+body.light-mode .source-note {
+  color: #71849a;
+}
+
+/* Light mode footer. */
+
+body.light-mode .footer {
+  background: #e5eef7;
+  border-color: #d1dfeb;
+}
+
+body.light-mode .footer-main > p {
+  color: #61758b;
+}
+
+body.light-mode .footer-bottom {
+  border-color: #d1dfeb;
+  color: #71849a;
+}
+
+/* ==========================================
+   MOBILE NAVIGATION AND THEME TOGGLE
+   Adjusts the theme switch and menu in mobile view.
+========================================== */
+
+@media (max-width: 720px) {
+
+  .theme-toggle {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .nav-links .theme-toggle {
+    display: inline-flex;
+  }
+
+  /* Light mode mobile navigation colors. */
+
+  body.light-mode .nav-links {
+    background: #ffffff;
+    border-color: #d6e3ef;
+  }
+
+  body.light-mode .nav-links a {
+    border-bottom: 1px solid #edf2f7;
+  }
+
+}
+
+/* Smaller theme toggle for narrow mobile screens. */
+
+@media (max-width: 460px) {
+
+  .theme-toggle {
+    padding: 7px 10px;
+    gap: 6px;
+  }
+
+  .theme-icon {
+    font-size: 12px;
+  }
+
+  .theme-text {
+    font-size: 9px;
+  }
+
+}
+
+/* ==========================================
+   CYBERSAFE PH - MODERN QUIZ RESULTS
+   Styles the final score dashboard after the quiz.
+========================================== */
+
+/* Main quiz result layout. */
+
+.quiz-result {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  align-items: center;
+  gap: 28px;
+  padding: 10px 0 5px;
+  animation: resultFadeIn .5s ease both;
+}
+
+/* Animation when the quiz result appears. */
+
+@keyframes resultFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Score ring and score information alignment. */
+
+.result-score-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* Circular score indicator using a conic gradient. */
+
+.score-ring {
+  --score-angle: 0deg;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: conic-gradient(
+    var(--cyan) var(--score-angle),
+    #1a3551 var(--score-angle)
+  );
+  transition: background 1.2s ease;
+}
+
+/* Inner circle of the score indicator. */
+
+.score-ring::before {
+  content: "";
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background: #0d2340;
+}
+
+/* Score number and percentage arrangement. */
+
+.score-ring-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.score-number {
+  font: 700 35px var(--display);
+  color: var(--text);
+}
+
+.score-percent {
+  font: 700 11px var(--font);
+  color: var(--cyan);
+}
+
+.score-caption {
+  font: 700 9px var(--display);
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+/* Result details and score description. */
+
+.result-details {
+  min-width: 0;
+}
+
+.result-label {
+  display: inline-block;
+  color: var(--cyan);
+  font: 700 9px var(--display);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.result-details h3 {
+  font: 700 25px/1.2 var(--display);
+  margin-bottom: 9px;
+}
+
+.result-message {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 18px !important;
+}
+
+/* Grid of quiz performance statistics. */
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.result-stat {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(53,217,245,.045);
+  min-width: 0;
+}
+
+.result-stat strong {
+  display: block;
+  font: 700 22px var(--display);
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.result-stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+/* Correct and incorrect answer breakdown. */
+
+.result-breakdown {
+  margin-top: 20px;
+}
+
+.breakdown-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 9px;
+}
+
+.breakdown-heading strong {
+  color: var(--cyan);
+}
+
+/* Horizontal bar showing correct and incorrect answers. */
+
+.breakdown-track {
+  display: flex;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #1a3551;
+}
+
+.breakdown-correct {
+  width: 0;
+  background: var(--green);
+  transition: width 1s ease;
+}
+
+.breakdown-wrong {
+  width: 0;
+  background: #ff8494;
+  transition: width 1s ease;
+}
+
+/* Retake quiz button area. */
+
+.result-actions {
+  margin-top: 20px;
+}
+
+.result-actions .button {
+  justify-content: center;
+}
+
+/* Light mode colors for the quiz results dashboard. */
+
+body.light-mode .score-ring::before {
+  background: #edf5fc;
+}
+
+body.light-mode .result-stat {
+  background: rgba(53,160,200,.05);
+}
+
+body.light-mode .breakdown-track {
+  background: #dce8f2;
+}
+
+/* ==========================================
+   TABLET AND MOBILE QUIZ RESULTS
+   Makes the score dashboard responsive on smaller screens.
+========================================== */
+
+@media (max-width: 720px) {
+  .quiz-result {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding-top: 5px;
+  }
+
+  /* Smaller score ring for mobile screens. */
+
+  .score-ring {
+    width: 140px;
+    height: 140px;
+  }
+
+  .score-ring::before {
+    width: 112px;
+    height: 112px;
+  }
+
+  .score-number {
+    font-size: 32px;
+  }
+
+  .result-details h3 {
+    font-size: 23px;
+  }
+
+  .result-message {
+    font-size: 12px;
+  }
+
+  .result-stats {
+    gap: 8px;
+  }
+
+  .result-stat {
+    padding: 12px;
+  }
+}
+
+/* Additional adjustments for very narrow phone screens. */
+
+@media (max-width: 380px) {
+  .quiz-card {
+    padding: 16px;
+  }
+
+  .quiz-top {
+    font-size: 8px;
+    letter-spacing: .8px;
+  }
+
+  .result-stat strong {
+    font-size: 19px;
+  }
+
+  .result-details h3 {
+    font-size: 21px;
+  }
+
+  .result-stats {
+    gap: 7px;
+  }
 }
