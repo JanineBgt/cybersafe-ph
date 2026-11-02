@@ -1,12 +1,47 @@
-// ==========================================
 // CYBERSAFE PH
 // No personal information is collected.
-// ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ==========================================
+
+  // DARK / LIGHT MODE TOGGLE
+
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const themeText = document.getElementById("themeText");
+
+  if (themeToggle && themeIcon && themeText) {
+
+    function updateTheme(isLight) {
+
+      document.body.classList.toggle("light-mode", isLight);
+
+      if (isLight) {
+        themeIcon.textContent = "☾";
+        themeText.textContent = "Dark Mode";
+        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+      } else {
+        themeIcon.textContent = "☀";
+        themeText.textContent = "Light Mode";
+        themeToggle.setAttribute("aria-label", "Switch to light mode");
+      }
+
+    }
+
+    // Start in dark mode
+    updateTheme(false);
+
+    // Toggle theme
+    themeToggle.addEventListener("click", () => {
+
+      const isLight = !document.body.classList.contains("light-mode");
+
+      updateTheme(isLight);
+
+    });
+
+  }
+
   // 11. ACTIVE NAVIGATION
-  // ==========================================
 
   const navigationLinks = document.querySelectorAll(".nav-link");
   const pageSections = document.querySelectorAll("main section[id]");
@@ -46,9 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateActiveNavigation);
 
   updateActiveNavigation();
-  // ==========================================
+
   // NAVIGATION ACTIVE STATE
-  // ==========================================
 
   document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-link");
@@ -66,10 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-  // ==========================================
   // 1. MOBILE NAVIGATION
-  // ==========================================
 
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
@@ -96,11 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
-
-  // ==========================================
   // 2. THREAT CENTER
-  // ==========================================
 
   const threatInfo = {
 
@@ -178,9 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  // ==========================================
   // 3. PASSWORD SAFETY CHECKLIST
-  // ==========================================
 
   // This feature does not collect real passwords.
 
@@ -221,10 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateHabits();
 
-
-  // ==========================================
   // 4. CYBERSAFE INTERACTIVE QUIZ
-  // ==========================================
 
   const quizQuestions = [
 
@@ -300,10 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ];
 
-
-  // ==========================================
   // 5. QUIZ ELEMENTS AND VARIABLES
-  // ==========================================
 
   const quizContent = document.getElementById("quizContent");
   const quizProgress = document.getElementById("quizProgress");
@@ -315,10 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let quizScore = 0;
   let quizLocked = false;
 
-
-  // ==========================================
   // 6. UPDATE QUIZ PROGRESS
-  // ==========================================
 
   function updateQuizProgress() {
 
@@ -338,10 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
-  // ==========================================
   // 7. DISPLAY QUESTION
-  // ==========================================
 
   function renderQuestion() {
 
@@ -393,10 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
-  // ==========================================
   // 8. CHECK ANSWER
-  // ==========================================
 
   function chooseAnswer(choice) {
 
@@ -461,14 +471,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
-  // ==========================================
-  // 9. DISPLAY FINAL RESULT
-  // ==========================================
+  // 9. MODERN QUIZ SCORING RESULTS
 
   function renderResult() {
 
     if (!quizContent) return;
+
+    const totalQuestions = quizQuestions.length;
+    const correctAnswers = quizScore;
+    const wrongAnswers = totalQuestions - correctAnswers;
+
+    const accuracy = totalQuestions > 0
+      ? Math.round((correctAnswers / totalQuestions) * 100)
+      : 0;
+
+    const totalScore = Math.round(
+      (correctAnswers / totalQuestions) * 100
+    );
 
     if (quizProgress) {
       quizProgress.textContent = "CHALLENGE COMPLETE";
@@ -483,51 +502,213 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let message;
+    let heading;
 
-    if (quizScore === 5) {
-      message =
-        "Excellent awareness! Keep practicing safe online habits.";
-    } else if (quizScore >= 3) {
-      message =
-        "Good effort! Review the topics and keep learning.";
+    if (accuracy === 100) {
+      heading = "Perfect performance!";
+      message = "Excellent awareness! You answered every question correctly. Keep practicing safe online habits.";
+    } else if (accuracy >= 80) {
+      heading = "Excellent work!";
+      message = "You have a strong understanding of online safety. Keep using these habits in your everyday digital activities.";
+    } else if (accuracy >= 60) {
+      heading = "Good effort!";
+      message = "You understand many important cybersecurity concepts. Review the questions you missed to improve further.";
+    } else if (accuracy >= 40) {
+      heading = "Keep practicing!";
+      message = "You are making progress. Explore the CyberSafe PH guides and try the challenge again.";
     } else {
-      message =
-        "A good start! Revisit the guides and try again.";
+      heading = "A good start!";
+      message = "There is more to learn about online safety. Review the Threat Center and Password Lab before trying again.";
     }
 
     quizContent.replaceChildren();
 
-    const symbol = document.createElement("div");
-    symbol.className = "quiz-symbol";
-    symbol.textContent = "✓";
+    // Main result container
+    const result = document.createElement("div");
+    result.className = "quiz-result";
 
-    const resultTitle = document.createElement("h3");
-    resultTitle.textContent =
-      `You scored ${quizScore} out of ${quizQuestions.length}.`;
+    // SCORE CIRCLE
+    const scoreArea = document.createElement("div");
+    scoreArea.className = "result-score-area";
 
-    const resultMessage = document.createElement("p");
-    resultMessage.textContent = message;
+    const ring = document.createElement("div");
+    ring.className = "score-ring";
+    ring.setAttribute("role", "img");
+    ring.setAttribute(
+      "aria-label",
+      `Score: ${totalScore} percent`
+    );
+
+    const ringContent = document.createElement("div");
+    ringContent.className = "score-ring-content";
+
+    const scoreNumber = document.createElement("span");
+    scoreNumber.className = "score-number";
+    scoreNumber.textContent = "0";
+
+    const scorePercent = document.createElement("span");
+    scorePercent.className = "score-percent";
+    scorePercent.textContent = "%";
+
+    ringContent.append(scoreNumber, scorePercent);
+    ring.appendChild(ringContent);
+
+    const scoreCaption = document.createElement("span");
+    scoreCaption.className = "score-caption";
+    scoreCaption.textContent = "YOUR ACCURACY";
+
+    scoreArea.append(ring, scoreCaption);
+
+    // RESULT DETAILS
+    const details = document.createElement("div");
+    details.className = "result-details";
+
+    const label = document.createElement("span");
+    label.className = "result-label";
+    label.textContent = "QUIZ PERFORMANCE";
+
+    const title = document.createElement("h3");
+    title.textContent = heading;
+
+    const description = document.createElement("p");
+    description.className = "result-message";
+    description.textContent = message;
+
+    // STATISTICS
+    const stats = document.createElement("div");
+    stats.className = "result-stats";
+
+    const statData = [
+      {
+        value: `${totalScore}/100`,
+        label: "TOTAL SCORE"
+      },
+      {
+        value: `${correctAnswers}`,
+        label: "CORRECT ANSWERS"
+      },
+      {
+        value: `${wrongAnswers}`,
+        label: "INCORRECT ANSWERS"
+      },
+      {
+        value: `${totalQuestions}/${totalQuestions}`,
+        label: "QUESTIONS ANSWERED"
+      }
+    ];
+
+    statData.forEach(data => {
+
+      const card = document.createElement("div");
+      card.className = "result-stat";
+
+      const value = document.createElement("strong");
+      value.textContent = data.value;
+
+      const caption = document.createElement("span");
+      caption.textContent = data.label;
+
+      card.append(value, caption);
+      stats.appendChild(card);
+
+    });
+
+    // PERFORMANCE BREAKDOWN
+    const breakdown = document.createElement("div");
+    breakdown.className = "result-breakdown";
+
+    const breakdownHeading = document.createElement("div");
+    breakdownHeading.className = "breakdown-heading";
+
+    const breakdownLabel = document.createElement("span");
+    breakdownLabel.textContent = "Performance breakdown";
+
+    const breakdownPercentage = document.createElement("strong");
+    breakdownPercentage.textContent = `${accuracy}% accuracy`;
+
+    breakdownHeading.append(
+      breakdownLabel,
+      breakdownPercentage
+    );
+
+    const track = document.createElement("div");
+    track.className = "breakdown-track";
+    track.setAttribute("aria-label", "Correct and incorrect answers");
+
+    const correctBar = document.createElement("div");
+    correctBar.className = "breakdown-correct";
+
+    const wrongBar = document.createElement("div");
+    wrongBar.className = "breakdown-wrong";
+
+    track.append(correctBar, wrongBar);
+    breakdown.append(breakdownHeading, track);
+
+    // RETAKE BUTTON
+    const actions = document.createElement("div");
+    actions.className = "result-actions";
 
     const retryButton = document.createElement("button");
     retryButton.className = "button button-primary";
     retryButton.type = "button";
-    retryButton.textContent = "Try again ↻";
+    retryButton.textContent = "Retake Quiz ↻";
 
     retryButton.addEventListener("click", startQuizAgain);
 
-    quizContent.append(
-      symbol,
-      resultTitle,
-      resultMessage,
-      retryButton
+    actions.appendChild(retryButton);
+
+    details.append(
+      label,
+      title,
+      description,
+      stats,
+      breakdown,
+      actions
     );
+
+    result.append(scoreArea, details);
+    quizContent.appendChild(result);
+
+    // ANIMATE SCORE AFTER DISPLAY
+    requestAnimationFrame(() => {
+
+      ring.style.setProperty(
+        "--score-angle",
+        `${accuracy * 3.6}deg`
+      );
+
+      correctBar.style.width = `${accuracy}%`;
+      wrongBar.style.width = `${100 - accuracy}%`;
+
+      const duration = 1000;
+      const startTime = performance.now();
+
+      function animateScore(currentTime) {
+
+        const elapsed = currentTime - startTime;
+
+        const progress = Math.min(elapsed / duration, 1);
+
+        const easedProgress =
+          1 - Math.pow(1 - progress, 3);
+
+        scoreNumber.textContent = Math.round(
+          accuracy * easedProgress
+        );
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScore);
+        }
+
+      }
+
+      requestAnimationFrame(animateScore);
+
+    });
 
   }
 
-
-  // ==========================================
   // 10. START OR RESTART QUIZ
-  // ==========================================
 
   function startQuizAgain() {
 
