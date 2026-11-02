@@ -2502,3 +2502,11 @@ body.light-mode .breakdown-track {
     gap: 7px;
   }
 }
+/* DESKTOP THEME TOGGLE */
+@media (min-width: 721px) {
+  .theme-toggle {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
