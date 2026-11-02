@@ -41,32 +41,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  // 11. ACTIVE NAVIGATION
+
+  // ACTIVE NAVIGATION - SCROLL DETECTION
 
   const navigationLinks = document.querySelectorAll(".nav-link");
   const pageSections = document.querySelectorAll("main section[id]");
 
   function updateActiveNavigation() {
+
     let currentSection = "home";
 
     pageSections.forEach(section => {
+
       const sectionTop = section.getBoundingClientRect().top;
 
-      if (sectionTop <= 150) {
+      if (sectionTop <= 160) {
         currentSection = section.id;
       }
+
     });
 
     navigationLinks.forEach(link => {
+
+      const target = link.getAttribute("href");
+
       link.classList.toggle(
         "active",
-        link.getAttribute("href") === `#${currentSection}`
+        target === `#${currentSection}`
       );
+
     });
+
   }
 
+  // Update when scrolling
+  window.addEventListener("scroll", updateActiveNavigation);
+
+  // Update when page loads
+  updateActiveNavigation();
+
+  // Update when navigation link is clicked
   navigationLinks.forEach(link => {
+
     link.addEventListener("click", () => {
+
       const target = link.getAttribute("href");
 
       navigationLinks.forEach(item => {
@@ -75,30 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
           item.getAttribute("href") === target
         );
       });
+
     });
+
   });
 
-  window.addEventListener("scroll", updateActiveNavigation);
-
-  updateActiveNavigation();
-
-  // NAVIGATION ACTIVE STATE
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        // Remove active state from all navigation links
-        navLinks.forEach((nav) => {
-          nav.classList.remove("active");
-        });
-
-        // Add active state to the clicked navigation link
-        this.classList.add("active");
-      });
-    });
-  });
 
   // 1. MOBILE NAVIGATION
 
